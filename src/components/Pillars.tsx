@@ -1,0 +1,122 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Dumbbell, Utensils, Brain, ArrowUpRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+import FireSparks from "@/components/ui/FireSparks";
+
+const pillars = [
+    {
+        icon: Dumbbell,
+        title: "FITNESS",
+        description: "Tailored workout plans designed to build strength, endurance, and confidence. No generic routines.",
+        gradient: "from-blue-500/20 to-cyan-500/5",
+        hoverGradient: "group-hover:from-blue-500/30 group-hover:to-cyan-500/10",
+        border: "group-hover:border-blue-500/50",
+        iconColor: "text-blue-500",
+        shadow: "group-hover:shadow-blue-500/20"
+    },
+    {
+        icon: Utensils,
+        title: "NUTRITION",
+        description: "Sustainable eating habits that fuel your body without restriction. Eat for performance.",
+        gradient: "from-orange-500/20 to-red-500/5",
+        hoverGradient: "group-hover:from-orange-500/30 group-hover:to-red-500/10",
+        border: "group-hover:border-orange-500/50",
+        iconColor: "text-orange-500",
+        shadow: "group-hover:shadow-orange-500/20"
+    },
+    {
+        icon: Brain,
+        title: "MINDSET",
+        description: "Develop the mental resilience to overcome obstacles inside and outside the gym.",
+        gradient: "from-secondary/20 to-purple-500/5",
+        hoverGradient: "group-hover:from-secondary/30 group-hover:to-purple-500/10",
+        border: "group-hover:border-secondary/50",
+        iconColor: "text-secondary",
+        shadow: "group-hover:shadow-secondary/20"
+    },
+];
+
+
+export default function Pillars() {
+    return (
+        <section id="pillars" className="py-20 md:py-32 bg-background relative overflow-hidden">
+            {/* Background Texture */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]" />
+
+            {/* Fire Animation Background */}
+            <div className="absolute inset-0 opacity-30 pointer-events-none z-0">
+                <FireSparks />
+            </div>
+
+            <div className="container px-4 md:px-6 mx-auto relative z-10">
+                <div className="text-center mb-20">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-4xl md:text-6xl font-sport font-bold italic uppercase tracking-tighter mb-6"
+                    >
+                        The Pillars of <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary pr-2">Power</span>
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-zinc-400 max-w-2xl mx-auto text-lg"
+                    >
+                        A holistic approach to transformation. We focus on the three key elements that drive real, lasting change.
+                    </motion.p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-8">
+                    {pillars.map((pillar, index) => (
+                        <motion.div
+                            key={pillar.title}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            viewport={{ once: true }}
+                            className={cn(
+                                "group relative p-1 rounded-2xl bg-zinc-900/50 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2",
+                                "hover:shadow-2xl", pillar.shadow
+                            )}
+                        >
+                            {/* Gradient Border content */}
+                            <div className={cn(
+                                "absolute inset-0 rounded-2xl bg-gradient-to-br opacity-50 group-hover:opacity-100 transition-opacity duration-500",
+                                pillar.gradient
+                            )} />
+
+                            <div className="relative h-full bg-zinc-950/90 rounded-xl p-8 flex flex-col items-center text-center border border-white/5 group-hover:border-white/10 transition-colors">
+                                <div className={cn(
+                                    "p-4 rounded-full bg-zinc-900/80 mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3",
+                                    pillar.iconColor
+                                )}>
+                                    <pillar.icon className="w-10 h-10" />
+                                </div>
+
+                                <h3 className="text-3xl font-sport font-bold italic uppercase mb-4 text-white group-hover:text-primary transition-colors">
+                                    {pillar.title}
+                                </h3>
+
+                                <p className="text-zinc-400 leading-relaxed mb-8">
+                                    {pillar.description}
+                                </p>
+
+                                <div className={cn(
+                                    "mt-auto flex items-center gap-2 text-sm font-bold uppercase tracking-wider opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0",
+                                    pillar.iconColor
+                                )}>
+                                    Learn More <ArrowUpRight className="w-4 h-4" />
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}

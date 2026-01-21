@@ -1,0 +1,62 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/Button";
+
+export default function About() {
+    return (
+        <section id="about" className="py-20 md:py-32 bg-background relative overflow-hidden">
+            <div className="container px-4 md:px-6 mx-auto">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+
+                    {/* Image Side */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="relative"
+                    >
+                        <div className="relative aspect-square md:aspect-[4/5] overflow-hidden rounded-2xl bg-zinc-900 border border-zinc-800 shadow-2xl">
+                            {/* Placeholder for Radha's Image */}
+                            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 flex items-center justify-center text-zinc-500 font-mono text-sm">
+                                [Radha Edoo Image]
+                            </div>
+                        </div>
+                        {/* Decoration */}
+                        <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl -z-10" />
+                    </motion.div>
+
+                    {/* Text Side */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
+                            More Than Just <span className="text-primary">Movement</span>.
+                        </h2>
+                        <p className="text-zinc-400 text-lg mb-6 leading-relaxed">
+                            I&apos;m Radha Edoo, and my mission is simple: to help you build a body that performs as well as it looks, and a mindset that&apos;s unbreakable.
+                        </p>
+                        <p className="text-zinc-400 text-lg mb-8 leading-relaxed">
+                            At The Fuel Haus, we don&apos;t just workout. We train with purpose. We eat to fuel. And we ignite the fire within to conquer every aspect of life. Whether you are just starting or looking to level up, this is where your transformation begins.
+                        </p>
+                        <div className="flex gap-4">
+                            <div className="flex flex-col">
+                                <span className="text-3xl font-bold text-white">500+</span>
+                                <span className="text-sm text-zinc-500">Lives Changed</span>
+                            </div>
+                            <div className="w-px h-12 bg-zinc-800 mx-4" />
+                            <div className="flex flex-col">
+                                <span className="text-3xl font-bold text-white">100%</span>
+                                <span className="text-sm text-zinc-500">Commitment</span>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+            </div>
+        </section>
+    );
+}
