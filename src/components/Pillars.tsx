@@ -1,9 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Dumbbell, Utensils, Brain, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import FireSparks from "@/components/ui/FireSparks";
+import Modal from "@/components/ui/Modal";
+import CommunityForm from "@/components/CommunityForm";
 
 const pillars = [
     {
@@ -40,6 +43,8 @@ const pillars = [
 
 
 export default function Pillars() {
+    const [selectedPillar, setSelectedPillar] = useState<string | null>(null);
+
     return (
         <section id="pillars" className="py-20 md:py-32 bg-background relative overflow-hidden">
             {/* Background Texture */}
@@ -79,8 +84,9 @@ export default function Pillars() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
+                            onClick={() => setSelectedPillar(pillar.title)}
                             className={cn(
-                                "group relative p-1 rounded-2xl bg-zinc-900/50 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2",
+                                "group relative p-1 rounded-2xl bg-zinc-900/50 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 cursor-pointer",
                                 "hover:shadow-2xl", pillar.shadow
                             )}
                         >
@@ -110,13 +116,22 @@ export default function Pillars() {
                                     "mt-auto flex items-center gap-2 text-sm font-bold uppercase tracking-wider opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0",
                                     pillar.iconColor
                                 )}>
-                                    Learn More <ArrowUpRight className="w-4 h-4" />
+                                    Join Now <ArrowUpRight className="w-4 h-4" />
                                 </div>
                             </div>
                         </motion.div>
                     ))}
                 </div>
             </div>
+
+            <Modal
+                isOpen={!!selectedPillar}
+                onClose={() => setSelectedPillar(null)}
+            >
+                {selectedPillar && (
+                    <CommunityForm pillarName={selectedPillar} className="border-none bg-transparent shadow-none" />
+                )}
+            </Modal>
         </section>
     );
 }

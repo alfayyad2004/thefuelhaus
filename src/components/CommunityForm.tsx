@@ -16,6 +16,11 @@ type Inputs = {
     goals: string;
 };
 
+interface CommunityFormProps {
+    pillarName?: string;
+    className?: string;
+}
+
 // Google Form IDs extracted
 const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc5Y4Ln9VXKP5wGd3tb7RmZojv2rns14_xn0hPEKUZ_70BIfQ/formResponse";
 const ENTRY_IDS = {
@@ -25,7 +30,7 @@ const ENTRY_IDS = {
     goals: "entry.839337160",
 };
 
-export default function CommunityForm() {
+export default function CommunityForm({ pillarName, className }: CommunityFormProps) {
     const {
         register,
         handleSubmit,
@@ -39,12 +44,17 @@ export default function CommunityForm() {
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         setIsSubmitting(true);
 
+        // Append pillar interest to goals if present
+        const finalGoals = pillarName
+            ? `[Interest: ${pillarName}] ${data.goals}`
+            : data.goals;
+
         // Construct FormData for Google Forms
         const formData = new FormData();
         formData.append(ENTRY_IDS.name, data.name);
         formData.append(ENTRY_IDS.email, data.email);
         formData.append(ENTRY_IDS.phone, data.phone);
-        formData.append(ENTRY_IDS.goals, data.goals);
+        formData.append(ENTRY_IDS.goals, finalGoals);
 
         try {
             // Submit with no-cors to avoid CORS errors (we won't get a readable response)
@@ -73,7 +83,10 @@ export default function CommunityForm() {
             <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center justify-center py-12 px-6 text-center bg-zinc-900/50 backdrop-blur-sm rounded-xl border border-zinc-800"
+                className={cn(
+                    "flex flex-col items-center justify-center py-12 px-6 text-center bg-zinc-900/50 backdrop-blur-sm rounded-xl border border-zinc-800",
+                    className
+                )}
             >
                 <motion.div
                     initial={{ scale: 0 }}
@@ -114,7 +127,7 @@ export default function CommunityForm() {
                     transition={{ delay: 0.7 }}
                     className="text-zinc-400 max-w-sm"
                 >
-                    Your commitment to change has been noted. We will review your application and contact you shortly.
+                    Your commitment to {pillarName ? `${pillarName.toLowerCase()} and ` : ""}change has been noted. We will review your application and contact you shortly.
                 </motion.p>
 
                 <motion.div
@@ -135,7 +148,16 @@ export default function CommunityForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-zinc-900/30 p-6 rounded-2xl border border-white/5 backdrop-blur-md">
+        <form onSubmit={handleSubmit(onSubmit)} className={cn("space-y-6 bg-zinc-900/30 p-6 rounded-2xl border border-white/5 backdrop-blur-md", className)}>
+            {pillarName && (
+                <div className="mb-6 text-center">
+                    <h3 className="text-xl font-bold text-white uppercase tracking-wider">
+                        Join <span className="text-orange-500">{pillarName}</span>
+                    </h3>
+                    <p className="text-sm text-zinc-400 mt-1">Start your journey today.</p>
+                </div>
+            )}
+
             <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                     <label className="text-xs uppercase tracking-wider text-zinc-500 font-semibold pl-1">Name</label>
@@ -178,7 +200,7 @@ export default function CommunityForm() {
             <div className="space-y-2">
                 <label className="text-xs uppercase tracking-wider text-zinc-500 font-semibold pl-1">Your Goals</label>
                 <Textarea
-                    placeholder="Tell us about your fitness journey and what you want to achieve..."
+                    placeholder={`Tell us about your ${pillarName ? pillarName.toLowerCase() : "fitness"} goals...`}
                     {...register("goals", { required: true })}
                     className={cn(
                         "bg-zinc-950/50 border-zinc-800 focus:border-orange-500 focus:ring-orange-500/20 transition-all duration-300 min-h-[120px] resize-none",
