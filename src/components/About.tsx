@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 
@@ -18,10 +19,12 @@ export default function About() {
                         className="relative"
                     >
                         <div className="relative aspect-square md:aspect-[4/5] overflow-hidden rounded-2xl bg-zinc-900 border border-zinc-800 shadow-2xl">
-                            {/* Placeholder for Radha's Image */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 flex items-center justify-center text-zinc-500 font-mono text-sm">
-                                [Radha Edoo Image]
-                            </div>
+                            <Image
+                                src="/radha.jpg"
+                                alt="Radha Edoo"
+                                fill
+                                className="object-cover"
+                            />
                         </div>
                         {/* Decoration */}
                         <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl -z-10" />
@@ -55,6 +58,31 @@ export default function About() {
                                 <span className="text-3xl font-bold text-white">100%</span>
                                 <span className="text-sm text-zinc-500">Commitment</span>
                             </div>
+                        </div>
+
+                        <div className="mt-8 pt-8 border-t border-zinc-900 flex flex-col md:flex-row gap-6 items-start md:items-center">
+                            {/* ACE Badge */}
+                            <div className="relative w-32 h-32 shrink-0 bg-white/5 rounded-full p-2">
+                                <Image
+                                    src="/badge-pt.webp"
+                                    alt="ACE Personal Trainer Badge"
+                                    fill
+                                    className="object-contain p-2"
+                                />
+                            </div>
+
+                            <a
+                                href="/cpr-certificate.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-zinc-400 hover:text-primary transition-colors text-sm uppercase tracking-wider font-bold"
+                            >
+                                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                                <div>
+                                    <div className="text-white">Certified Personal Trainer & Nutrition Specialist</div>
+                                    <div className="text-xs text-zinc-500 font-normal mt-0.5">First Aid • CPR • AED Certified <span className="underline ml-1">View Certificate</span></div>
+                                </div>
+                            </a>
                         </div>
                     </motion.div>
                 </div>
