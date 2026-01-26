@@ -173,10 +173,14 @@ export default function Pillars() {
                                 </div>
 
                                 <div className={cn(
-                                    "mt-auto flex items-center gap-2 text-sm font-bold uppercase tracking-wider opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0",
+                                    "mt-auto flex items-center gap-2 text-sm font-bold uppercase tracking-wider transition-all duration-300",
+                                    "opacity-100 translate-y-0", // Visible on mobile
+                                    "md:opacity-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0", // Hover effect on desktop
                                     pillar.iconColor
                                 )}>
-                                    Join Now <ArrowUpRight className="w-4 h-4" />
+                                    <span className="md:hidden">Tap to Join</span>
+                                    <span className="hidden md:inline">Join Now</span>
+                                    <ArrowUpRight className="w-4 h-4" />
                                 </div>
                             </div>
                         </motion.div>
