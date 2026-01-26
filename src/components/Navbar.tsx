@@ -55,7 +55,11 @@ export default function Navbar() {
                 }`}
         >
             <div className="container h-full mx-auto px-4 md:px-6 flex items-center justify-between">
-                <a href="#" className="relative z-[70] flex items-center gap-2 text-xl font-bold tracking-tighter text-white font-sport italic">
+                <a
+                    href="#"
+                    onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                    className="relative z-[70] flex items-center gap-2 text-xl font-bold tracking-tighter text-white font-sport italic"
+                >
                     <Image
                         src="/logo.jpg"
                         alt="The Fuel Haus Logo"
