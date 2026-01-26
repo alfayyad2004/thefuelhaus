@@ -25,6 +25,9 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
+                    <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-sm font-semibold text-primary mb-6 uppercase tracking-wider backdrop-blur-sm">
+                        Exclusive Women's Fitness Coaching
+                    </span>
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 mb-6">
                         Fuel your body. <br className="hidden md:block" />
                         <span className="text-primary">Fire your life.</span>
@@ -37,7 +40,7 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
                     <p className="max-w-[600px] text-zinc-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mb-8">
-                        Join the movement with Radha Edoo. Expert coaching in fitness, nutrition, and mindset to ignite your true potential.
+                        Join the movement with Radha Edoo. Expert coaching tailored specifically for women to ignite your true potential through fitness, nutrition, and mindset.
                     </p>
                 </motion.div>
 

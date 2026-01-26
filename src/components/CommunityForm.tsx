@@ -175,7 +175,10 @@ export default function CommunityForm({ pillarName, className }: CommunityFormPr
                     <Input
                         type="email"
                         placeholder="john@example.com"
-                        {...register("email", { required: true })}
+                        {...register("email", {
+                            required: true,
+                            pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
+                        })}
                         className={cn(
                             "bg-zinc-950/50 border-zinc-800 focus:border-orange-500 focus:ring-orange-500/20 transition-all duration-300 h-12",
                             errors.email && "border-red-500 focus:ring-red-500/20"
@@ -189,7 +192,10 @@ export default function CommunityForm({ pillarName, className }: CommunityFormPr
                 <Input
                     type="tel"
                     placeholder="1(868)000-0000"
-                    {...register("phone", { required: true })}
+                    {...register("phone", {
+                        required: true,
+                        minLength: 7
+                    })}
                     className={cn(
                         "bg-zinc-950/50 border-zinc-800 focus:border-orange-500 focus:ring-orange-500/20 transition-all duration-300 h-12",
                         errors.phone && "border-red-500 focus:ring-red-500/20"

@@ -94,7 +94,7 @@ export default function About() {
                             I started my fitness journey feeling overwhelmed, unsure, and sometimes discouraged — just like many beginners do. Over time, I realized that true transformation isn’t about perfection or extremes, but about showing up consistently, learning as you go, and celebrating every small win. This led me to pursue my certification as an ACE Personal Trainer and to dive deep into nutrition and mindset coaching.
                         </p>
                         <p className="text-zinc-400 text-lg mb-8 leading-relaxed">
-                            I created The Fuel Haus TT to share this journey with others, especially women who want to build strong, healthy habits that last. This space is all about progress over perfection, empowerment, and community — because I truly believe that when we fuel our bodies and fire our lives, amazing things happen, one step at a time.
+                            I created The Fuel Haus TT to share this journey with others, creating a dedicated space exclusively for women who want to build strong, healthy habits that last. This space is all about progress over perfection, empowerment, and community — because I truly believe that when we fuel our bodies and fire our lives, amazing things happen, one step at a time.
                         </p>
                         <div className="flex gap-4">
                             <div className="flex flex-col">
