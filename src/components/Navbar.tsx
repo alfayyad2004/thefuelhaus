@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Button } from "@/components/ui/Button";
@@ -54,8 +55,15 @@ export default function Navbar() {
                 }`}
         >
             <div className="container h-full mx-auto px-4 md:px-6 flex items-center justify-between">
-                <a href="#" className="relative z-[70] text-xl font-bold tracking-tighter text-white font-sport italic">
-                    THE <span className="text-primary">FUEL</span> HAUS
+                <a href="#" className="relative z-[70] flex items-center gap-2 text-xl font-bold tracking-tighter text-white font-sport italic">
+                    <Image
+                        src="/logo.jpg"
+                        alt="The Fuel Haus Logo"
+                        width={40}
+                        height={40}
+                        className="rounded-full object-contain"
+                    />
+                    <span>THE <span className="text-primary">FUEL</span> HAUS</span>
                 </a>
 
                 {/* Desktop Navigation */}

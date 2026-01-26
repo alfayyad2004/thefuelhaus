@@ -12,7 +12,18 @@ const pillars = [
     {
         icon: Dumbbell,
         title: "FITNESS",
-        description: "Tailored workout plans designed to build strength, endurance, and confidence. No generic routines.",
+        description: "Move with purpose. Build strength that lasts.",
+        coreFocus: [
+            "Strength training for women",
+            "Functional movement",
+            "Consistency over perfection",
+            "Progress, not comparison"
+        ],
+        teaches: [
+            "How to move safely and confidently",
+            "How to build strength at any level",
+            "How fitness supports everyday life"
+        ],
         gradient: "from-blue-500/20 to-cyan-500/5",
         hoverGradient: "group-hover:from-blue-500/30 group-hover:to-cyan-500/10",
         border: "group-hover:border-blue-500/50",
@@ -20,26 +31,49 @@ const pillars = [
         shadow: "group-hover:shadow-blue-500/20"
     },
     {
-        icon: Utensils,
-        title: "NUTRITION",
-        description: "Sustainable eating habits that fuel your body without restriction. Eat for performance.",
-        gradient: "from-orange-500/20 to-red-500/5",
-        hoverGradient: "group-hover:from-orange-500/30 group-hover:to-red-500/10",
-        border: "group-hover:border-orange-500/50",
-        iconColor: "text-orange-500",
-        shadow: "group-hover:shadow-orange-500/20"
-    },
-    {
         icon: Brain,
         title: "MINDSET",
-        description: "Develop the mental resilience to overcome obstacles inside and outside the gym.",
+        description: "Train the mind that carries the body.",
+        coreFocus: [
+            "Discipline over motivation",
+            "Confidence through action",
+            "Self-respect and boundaries",
+            "Mental resilience"
+        ],
+        teaches: [
+            "How to stay consistent even on hard days",
+            "How to rebuild confidence through movement",
+            "How mindset fuels long-term results"
+        ],
         gradient: "from-secondary/20 to-purple-500/5",
         hoverGradient: "group-hover:from-secondary/30 group-hover:to-purple-500/10",
         border: "group-hover:border-secondary/50",
         iconColor: "text-secondary",
         shadow: "group-hover:shadow-secondary/20"
     },
+    {
+        icon: Utensils,
+        title: "NUTRITION",
+        description: "Fuel, don’t restrict. Nourish to thrive.",
+        coreFocus: [
+            "Balanced, realistic eating",
+            "Food as fuel, not punishment",
+            "Sustainability over extremes",
+            "Education, not guilt"
+        ],
+        teaches: [
+            "How to eat to support energy and workouts",
+            "How to build healthy habits without restriction",
+            "How nutrition supports mind and body"
+        ],
+        gradient: "from-orange-500/20 to-red-500/5",
+        hoverGradient: "group-hover:from-orange-500/30 group-hover:to-red-500/10",
+        border: "group-hover:border-orange-500/50",
+        iconColor: "text-orange-500",
+        shadow: "group-hover:shadow-orange-500/20"
+    },
 ];
+
 
 
 export default function Pillars() {
@@ -111,6 +145,32 @@ export default function Pillars() {
                                 <p className="text-zinc-400 leading-relaxed mb-8">
                                     {pillar.description}
                                 </p>
+
+                                <div className="space-y-6 mb-8 w-full">
+                                    <div className="text-left bg-black/20 p-4 rounded-lg">
+                                        <h4 className="text-sm font-bold uppercase tracking-wider text-zinc-300 mb-2 border-b border-white/10 pb-2">Core Focus</h4>
+                                        <ul className="space-y-1">
+                                            {pillar.coreFocus.map((item, idx) => (
+                                                <li key={idx} className="text-sm text-zinc-400 flex items-start">
+                                                    <span className={cn("mt-1.5 mr-2 w-1.5 h-1.5 rounded-full shrink-0", pillar.iconColor.replace('text-', 'bg-'))} />
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+
+                                    <div className="text-left bg-black/20 p-4 rounded-lg">
+                                        <h4 className="text-sm font-bold uppercase tracking-wider text-zinc-300 mb-2 border-b border-white/10 pb-2">What This Pillar Teaches</h4>
+                                        <ul className="space-y-1">
+                                            {pillar.teaches.map((item, idx) => (
+                                                <li key={idx} className="text-sm text-zinc-400 flex items-start">
+                                                    <span className={cn("mt-1.5 mr-2 w-1.5 h-1.5 rounded-full shrink-0", pillar.iconColor.replace('text-', 'bg-'))} />
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
 
                                 <div className={cn(
                                     "mt-auto flex items-center gap-2 text-sm font-bold uppercase tracking-wider opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0",
