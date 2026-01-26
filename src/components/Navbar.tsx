@@ -74,6 +74,7 @@ export default function Navbar() {
                 <div className="hidden md:flex gap-8 items-center text-sm font-medium text-zinc-300">
                     <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }} className="hover:text-primary transition-colors cursor-pointer">About</a>
                     <a href="#pillars" onClick={(e) => { e.preventDefault(); scrollToSection('pillars'); }} className="hover:text-primary transition-colors cursor-pointer">Pillars</a>
+                    <a href="#faq" onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }} className="hover:text-primary transition-colors cursor-pointer">FAQ</a>
                     <a href="#community" onClick={(e) => { e.preventDefault(); scrollToSection('community'); }} className="hover:text-primary transition-colors cursor-pointer">Community</a>
                 </div>
 
@@ -117,7 +118,7 @@ export default function Navbar() {
                         <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary/20 rounded-full blur-[100px] pointer-events-none" />
 
                         <div className="flex flex-col gap-8 text-center">
-                            {['about', 'pillars', 'community'].map((item, index) => (
+                            {['about', 'pillars', 'faq', 'community'].map((item, index) => (
                                 <motion.a
                                     key={item}
                                     initial={{ opacity: 0, y: 20 }}

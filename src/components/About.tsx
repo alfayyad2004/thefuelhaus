@@ -56,6 +56,17 @@ export default function About() {
                             More Than Just <span className="text-primary">Movement</span>.
                         </h2>
 
+
+
+                        <p className="text-zinc-400 text-lg mb-6 leading-relaxed">
+                            Hi, I’m Radha 👋
+                            <br /><br />
+                            I started my fitness journey feeling overwhelmed, unsure, and sometimes discouraged — just like many beginners do. Over time, I realized that true transformation isn’t about perfection or extremes, but about showing up consistently, learning as you go, and celebrating every small win. This led me to pursue my certification as an ACE Personal Trainer and to dive deep into nutrition and mindset coaching.
+                        </p>
+                        <p className="text-zinc-400 text-lg mb-8 leading-relaxed">
+                            I created The Fuel Haus TT to share this journey with others, creating a dedicated space exclusively for women who want to build strong, healthy habits that last. This space is all about progress over perfection, empowerment, and community — because I truly believe that when we fuel our bodies and fire our lives, amazing things happen, one step at a time.
+                        </p>
+
                         <div className="mb-8 flex flex-col sm:flex-row gap-6 items-center sm:items-start">
                             {/* ACE Badge */}
                             <div className="relative w-28 h-28 shrink-0 bg-white/5 rounded-full p-2 ring-1 ring-white/10">
@@ -87,15 +98,6 @@ export default function About() {
                                 </a>
                             </div>
                         </div>
-
-                        <p className="text-zinc-400 text-lg mb-6 leading-relaxed">
-                            Hi, I’m Radha 👋
-                            <br /><br />
-                            I started my fitness journey feeling overwhelmed, unsure, and sometimes discouraged — just like many beginners do. Over time, I realized that true transformation isn’t about perfection or extremes, but about showing up consistently, learning as you go, and celebrating every small win. This led me to pursue my certification as an ACE Personal Trainer and to dive deep into nutrition and mindset coaching.
-                        </p>
-                        <p className="text-zinc-400 text-lg mb-8 leading-relaxed">
-                            I created The Fuel Haus TT to share this journey with others, creating a dedicated space exclusively for women who want to build strong, healthy habits that last. This space is all about progress over perfection, empowerment, and community — because I truly believe that when we fuel our bodies and fire our lives, amazing things happen, one step at a time.
-                        </p>
                         <div className="flex gap-4">
                             <div className="flex flex-col">
                                 <span className="text-3xl font-bold text-white">1-on-1</span>

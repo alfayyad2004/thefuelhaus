@@ -28,6 +28,7 @@ const pillars = [
         hoverGradient: "group-hover:from-blue-500/30 group-hover:to-cyan-500/10",
         border: "group-hover:border-blue-500/50",
         iconColor: "text-blue-500",
+        bulletColor: "bg-blue-500",
         shadow: "group-hover:shadow-blue-500/20"
     },
     {
@@ -49,6 +50,7 @@ const pillars = [
         hoverGradient: "group-hover:from-secondary/30 group-hover:to-purple-500/10",
         border: "group-hover:border-secondary/50",
         iconColor: "text-secondary",
+        bulletColor: "bg-secondary",
         shadow: "group-hover:shadow-secondary/20"
     },
     {
@@ -70,6 +72,7 @@ const pillars = [
         hoverGradient: "group-hover:from-orange-500/30 group-hover:to-red-500/10",
         border: "group-hover:border-orange-500/50",
         iconColor: "text-orange-500",
+        bulletColor: "bg-orange-500",
         shadow: "group-hover:shadow-orange-500/20"
     },
 ];
@@ -152,7 +155,7 @@ export default function Pillars() {
                                         <ul className="space-y-1">
                                             {pillar.coreFocus.map((item, idx) => (
                                                 <li key={idx} className="text-sm text-zinc-400 flex items-start">
-                                                    <span className={cn("mt-1.5 mr-2 w-1.5 h-1.5 rounded-full shrink-0", pillar.iconColor.replace('text-', 'bg-'))} />
+                                                    <span className={cn("mt-1.5 mr-2 w-1.5 h-1.5 rounded-full shrink-0", pillar.bulletColor)} />
                                                     {item}
                                                 </li>
                                             ))}
@@ -164,7 +167,7 @@ export default function Pillars() {
                                         <ul className="space-y-1">
                                             {pillar.teaches.map((item, idx) => (
                                                 <li key={idx} className="text-sm text-zinc-400 flex items-start">
-                                                    <span className={cn("mt-1.5 mr-2 w-1.5 h-1.5 rounded-full shrink-0", pillar.iconColor.replace('text-', 'bg-'))} />
+                                                    <span className={cn("mt-1.5 mr-2 w-1.5 h-1.5 rounded-full shrink-0", pillar.bulletColor)} />
                                                     {item}
                                                 </li>
                                             ))}
