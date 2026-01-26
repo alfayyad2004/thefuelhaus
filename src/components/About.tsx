@@ -18,16 +18,31 @@ export default function About() {
                         viewport={{ once: true }}
                         className="relative"
                     >
-                        <div className="relative aspect-square md:aspect-[4/5] overflow-hidden rounded-2xl bg-zinc-900 border border-zinc-800 shadow-2xl">
+                        {/* Decorative background element */}
+                        <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-[2rem] blur-2xl opacity-40" />
+
+                        <div className="relative aspect-square md:aspect-[4/5] overflow-hidden rounded-2xl bg-zinc-900 border border-white/10 shadow-2xl transition-transform duration-500 hover:scale-[1.01]">
                             <Image
                                 src="/radha.jpg"
                                 alt="Radha Edoo"
                                 fill
                                 className="object-cover"
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                priority
                             />
+
+                            {/* Inner vignette/border for polish */}
+                            <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
                         </div>
-                        {/* Decoration */}
-                        <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl -z-10" />
+
+                        {/* Floating Badge/Accent */}
+                        <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-zinc-950/80 backdrop-blur-md border border-white/10 rounded-2xl flex items-center justify-center shadow-xl p-4 hidden md:flex">
+                            <div className="text-center">
+                                <span className="block text-2xl font-bold text-white font-sport italic">ACE</span>
+                                <span className="block text-[10px] text-zinc-400 uppercase tracking-widest">Certified</span>
+                            </div>
+                        </div>
                     </motion.div>
 
                     {/* Text Side */}
@@ -83,8 +98,8 @@ export default function About() {
                         </p>
                         <div className="flex gap-4">
                             <div className="flex flex-col">
-                                <span className="text-3xl font-bold text-white">500+</span>
-                                <span className="text-sm text-zinc-500">Lives Changed</span>
+                                <span className="text-3xl font-bold text-white">1-on-1</span>
+                                <span className="text-sm text-zinc-500">Coaching</span>
                             </div>
                             <div className="w-px h-12 bg-zinc-800 mx-4" />
                             <div className="flex flex-col">
