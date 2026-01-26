@@ -37,9 +37,42 @@ export default function About() {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
+                        <h2 className="text-3xl md:text-5xl font-bold mb-8 tracking-tight">
                             More Than Just <span className="text-primary">Movement</span>.
                         </h2>
+
+                        <div className="mb-8 flex flex-col sm:flex-row gap-6 items-center sm:items-start">
+                            {/* ACE Badge */}
+                            <div className="relative w-28 h-28 shrink-0 bg-white/5 rounded-full p-2 ring-1 ring-white/10">
+                                <Image
+                                    src="/badge-pt.webp"
+                                    alt="ACE Personal Trainer Badge"
+                                    fill
+                                    className="object-contain p-2"
+                                />
+                            </div>
+
+                            <div className="flex flex-col gap-2 text-center sm:text-left">
+                                <div>
+                                    <h3 className="font-bold text-white text-lg leading-tight uppercase font-sport italic tracking-wide">
+                                        Certified Personal Trainer <br /><span className="text-primary">& Nutrition Specialist</span>
+                                    </h3>
+                                    <p className="text-zinc-500 text-sm mt-1">American Council on Exercise (ACE)</p>
+                                </div>
+
+                                <a
+                                    href="/cpr-certificate.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors text-xs uppercase tracking-wider font-semibold group justify-center sm:justify-start"
+                                >
+                                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                                    First Aid • CPR • AED Certified
+                                    <span className="border-b border-zinc-700 pb-0.5 group-hover:border-white transition-colors">View</span>
+                                </a>
+                            </div>
+                        </div>
+
                         <p className="text-zinc-400 text-lg mb-6 leading-relaxed">
                             Hi, I’m Radha 👋
                             <br /><br />
@@ -60,30 +93,6 @@ export default function About() {
                             </div>
                         </div>
 
-                        <div className="mt-8 pt-8 border-t border-zinc-900 flex flex-col md:flex-row gap-6 items-start md:items-center">
-                            {/* ACE Badge */}
-                            <div className="relative w-32 h-32 shrink-0 bg-white/5 rounded-full p-2">
-                                <Image
-                                    src="/badge-pt.webp"
-                                    alt="ACE Personal Trainer Badge"
-                                    fill
-                                    className="object-contain p-2"
-                                />
-                            </div>
-
-                            <a
-                                href="/cpr-certificate.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 text-zinc-400 hover:text-primary transition-colors text-sm uppercase tracking-wider font-bold"
-                            >
-                                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                                <div>
-                                    <div className="text-white">Certified Personal Trainer & Nutrition Specialist</div>
-                                    <div className="text-xs text-zinc-500 font-normal mt-0.5">First Aid • CPR • AED Certified <span className="underline ml-1">View Certificate</span></div>
-                                </div>
-                            </a>
-                        </div>
                     </motion.div>
                 </div>
             </div>
