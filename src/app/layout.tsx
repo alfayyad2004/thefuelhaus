@@ -13,15 +13,15 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "The Fuel Haus | Fuel Your Body. Fire Your Life.",
-  description: "Join the movement with Radha Edoo. Fitness, Nutrition, and Mindset coaching to ignite your transformation.",
-  keywords: ["Fitness", "Nutrition", "Mindset", "Coaching", "Radha Edoo", "The Fuel Haus", "Transformation"],
+  title: "The Fuel Haus TT | Fuel Your Body. Fire Your Life.",
+  description: "Join the movement with Radha Edoo. Fitness, Nutrition, and Mindset coaching to ignite your transformation with The Fuel Haus TT.",
+  keywords: ["Fitness", "Nutrition", "Mindset", "Coaching", "Radha Edoo", "The Fuel Haus TT", "Transformation"],
   openGraph: {
-    title: "The Fuel Haus",
+    title: "The Fuel Haus TT",
     description: "Fuel Your Body. Fire Your Life.",
     type: "website",
     locale: "en_US",
-    siteName: "The Fuel Haus",
+    siteName: "The Fuel Haus TT",
   },
 };
 

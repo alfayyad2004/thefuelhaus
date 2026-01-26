@@ -13,9 +13,9 @@ export default function Footer() {
                     />
                 </div>
                 <p className="text-zinc-500 text-sm">
-                    &copy; {new Date().getFullYear()} The Fuel Haus. All rights reserved.
+                    &copy; {new Date().getFullYear()} The Fuel Haus TT. All rights reserved.
                 </p>
             </div>
-        </footer>
+        </footer >
     );
 }

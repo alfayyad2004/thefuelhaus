@@ -63,7 +63,7 @@ export default function Navbar() {
                         height={40}
                         className="rounded-full object-contain"
                     />
-                    <span>THE <span className="text-primary">FUEL</span> HAUS</span>
+                    <span>THE <span className="text-primary">FUEL</span> HAUS TT</span>
                 </a>
 
                 {/* Desktop Navigation */}
