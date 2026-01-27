@@ -15,6 +15,9 @@ export default function Footer() {
                 <p className="text-zinc-500 text-sm">
                     &copy; {new Date().getFullYear()} The Fuel Haus TT. All rights reserved.
                 </p>
+                <p className="text-zinc-600 text-xs mt-2">
+                    Designed and Created by <a href="https://CaribbeanCodeStudios.com" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-400 transition-colors">CaribbeanCodeStudios.com</a>
+                </p>
             </div>
         </footer >
     );
