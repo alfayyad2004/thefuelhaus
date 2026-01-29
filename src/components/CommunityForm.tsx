@@ -22,7 +22,7 @@ interface CommunityFormProps {
 }
 
 // Google Form IDs extracted
-const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc5Y4Ln9VXKP5wGd3tb7RmZojv2rns14_xn0hPEKUZ_70BIfQ/formResponse";
+const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfOeeUSl-RroVw9ChNNxUzqy9TLevwXoRu9u2bnRIwGnHM99Q/formResponse";
 const ENTRY_IDS = {
     name: "entry.2005620554",
     email: "entry.1045781291",
