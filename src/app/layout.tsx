@@ -13,6 +13,10 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://thefuelhaustt.com'),
+  alternates: {
+    canonical: '/',
+  },
   title: "The Fuel Haus TT | Exclusive Women's Fitness Coaching",
   description: "Join the movement with Radha Edoo. Exclusive women's fitness, nutrition, and mindset coaching to ignite your transformation with The Fuel Haus TT.",
   keywords: ["Women's Fitness", "Female Personal Trainer", "Nutrition", "Mindset", "Coaching", "Radha Edoo", "Trinidad", "Transformation"],
